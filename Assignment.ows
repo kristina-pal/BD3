@@ -11,6 +11,8 @@
 		<node id="7" name="Select Rows" qualified_name="Orange.widgets.data.owselectrows.OWSelectRows" project_name="Orange3" version="" title="Select Rows" position="(488.0, 192.0)" />
 		<node id="8" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions (2)" position="(630.0, 101.0)" />
 		<node id="9" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="" title="Data Sampler" position="(635.0, 234.0)" />
+		<node id="10" name="Outliers" qualified_name="Orange.widgets.data.owoutliers.OWOutliers" project_name="Orange3" version="" title="Outliers" position="(798.0, 234.0)" />
+		<node id="11" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions (3)" position="(907.0, 94.0)" />
 	</nodes>
 	<links>
 		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
@@ -22,6 +24,8 @@
 		<link id="6" source_node_id="4" sink_node_id="7" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
 		<link id="7" source_node_id="7" sink_node_id="8" source_channel="Matching Data" sink_channel="Data" enabled="true" source_channel_id="matching_data" sink_channel_id="data" />
 		<link id="8" source_node_id="7" sink_node_id="9" source_channel="Matching Data" sink_channel="Data" enabled="true" source_channel_id="matching_data" sink_channel_id="data" />
+		<link id="9" source_node_id="9" sink_node_id="10" source_channel="Data Sample" sink_channel="Data" enabled="true" source_channel_id="data_sample" sink_channel_id="data" />
+		<link id="10" source_node_id="10" sink_node_id="11" source_channel="Inliers" sink_channel="Data" enabled="true" source_channel_id="inliers" sink_channel_id="data" />
 	</links>
 	<annotations />
 	<thumbnail />
@@ -159,14 +163,31 @@ A8YAAAAAAAAAHQAABdcAAAPGAAAAAAAEAAAF2AAAAAAAAAAdAAAF1wAAA8aUjApzaG93X3Byb2Jz
 lImMDHNvcnRfYnlfZnJlcZSJjA9zdGFja2VkX2NvbHVtbnOUiYwLX192ZXJzaW9uX1+USwKMEGNv
 bnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9
 lCiMBnZhbHVlc5R9lCiMBGN2YXKUjAdmYWlsdXJllEtlhpSMDm51bWJlcl9vZl9iaW5zlEsASv7/
-//+GlIwNc2VsZWN0ZWRfYmFyc5SPlEr+////hpSMA3ZhcpSMD21vaXN0dXJlX3N0cmVzc5RLZoaU
-aAxLAnWMCmF0dHJpYnV0ZXOUfZQojBRtYXRlcmlhbF9mbGV4aWJpbGl0eZRLAowVc3RydWN0dXJh
-bF9tYXNzX3JhdGlvlEsCjBRyZWNlbnRfcHJlY2lwaXRhdGlvbpRLAowSaW5mcmFzdHJ1Y3R1cmVf
-YWdllEsCjA5zdXJmYWNlX2RlYnJpc5RLAowSdmlicmF0aW9uX2V4cG9zdXJllEsCjA1hc3NldF9k
-ZW5zaXR5lEsCjBFpbnNwZWN0aW9uX3NlYXNvbpRLAYwRaW5zcGVjdGlvbl93aW5kb3eUSwFoH0sC
+//+GlIwNc2VsZWN0ZWRfYmFyc5SPlEr+////hpSMA3ZhcpSMFG1hdGVyaWFsX2ZsZXhpYmlsaXR5
+lEtmhpRoDEsCdYwKYXR0cmlidXRlc5R9lChoH0sCjBVzdHJ1Y3R1cmFsX21hc3NfcmF0aW+USwKM
+FHJlY2VudF9wcmVjaXBpdGF0aW9ulEsCjBJpbmZyYXN0cnVjdHVyZV9hZ2WUSwKMDnN1cmZhY2Vf
+ZGVicmlzlEsCjBJ2aWJyYXRpb25fZXhwb3N1cmWUSwKMDWFzc2V0X2RlbnNpdHmUSwKMEWluc3Bl
+Y3Rpb25fc2Vhc29ulEsBjBFpbnNwZWN0aW9uX3dpbmRvd5RLAYwPbW9pc3R1cmVfc3RyZXNzlEsC
 aBdLAXWMBW1ldGFzlH2UdWJhdS4=
 </properties>
 		<properties node_id="9" format="literal">{'compatibility_mode': False, 'controlAreaVisible': True, 'number_of_folds': 10, 'replacement': False, 'sampleSizeNumber': 1, 'sampleSizePercentage': 70, 'sampleSizeSqlPercentage': 0.1, 'sampleSizeSqlTime': 1, 'sampling_type': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\x01\x00\x00\x00\x1d\x00\x00\x00\xff\x00\x00\x01\xe6\x00\x00\x00\x01\x00\x00\x009\x00\x00\x00\xff\x00\x00\x01\xe6\x00\x00\x00\x00\x02\x00\x00\x00\x05\xd8\x00\x00\x00\x01\x00\x00\x009\x00\x00\x00\xff\x00\x00\x01\xe6', 'selectedFold': 1, 'sql_dl': False, 'stratify': False, 'use_seed': True, '__version__': 2}</properties>
+		<properties node_id="10" format="literal">{'auto_commit': True, 'controlAreaVisible': True, 'outlier_method': 2, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\xf5\x00\x00\x00\x93\x00\x00\x04:\x00\x00\x01\xbb\x00\x00\x02?\x00\x00\x01`\x00\x00\x03\x84\x00\x00\x02l\x00\x00\x00\x00\x02\x00\x00\x00\x05\xd8\x00\x00\x02\xf5\x00\x00\x00\xaf\x00\x00\x04:\x00\x00\x01\xbb', 'cov_editor': {'cont': 10, 'empirical_covariance': False, 'support_fraction': 1}, 'isf_editor': {'cont': 10, 'replicable': False}, 'lof_editor': {'cont': 2, 'metric_index': 0, 'n_neighbors': 20}, 'svm_editor': {'gamma': 0.01, 'nu': 50}, '__version__': 2}</properties>
+		<properties node_id="11" format="pickle">gASVMwMAAAAAAAB9lCiMCmF1dG9fYXBwbHmUiIwSY29udHJvbEFyZWFWaXNpYmxllIiMEGN1bXVs
+YXRpdmVfZGlzdHKUiYwTZml0dGVkX2Rpc3RyaWJ1dGlvbpRLAIwJaGlkZV9iYXJzlImMDWtkZV9z
+bW9vdGhpbmeUSwqME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAAAAAAAdAAAF1wAA
+A8YAAAAAAAAAHQAABdcAAAPGAAAAAAAEAAAF2AAAAAAAAAAdAAAF1wAAA8aUjApzaG93X3Byb2Jz
+lImMDHNvcnRfYnlfZnJlcZSJjA9zdGFja2VkX2NvbHVtbnOUiYwLX192ZXJzaW9uX1+USwKMEGNv
+bnRleHRfc2V0dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGU
+fZQojAZ2YWx1ZXOUfZQojARjdmFylIwHZmFpbHVyZZRLZYaUjA5udW1iZXJfb2ZfYmluc5RLAEr+
+////hpSMDXNlbGVjdGVkX2JhcnOUj5RK/v///4aUjAN2YXKUjBRtYXRlcmlhbF9mbGV4aWJpbGl0
+eZRLZoaUaAxLAnWMCmF0dHJpYnV0ZXOUfZQoaB9LAowVc3RydWN0dXJhbF9tYXNzX3JhdGlvlEsC
+jBRyZWNlbnRfcHJlY2lwaXRhdGlvbpRLAowSaW5mcmFzdHJ1Y3R1cmVfYWdllEsCjA5zdXJmYWNl
+X2RlYnJpc5RLAowSdmlicmF0aW9uX2V4cG9zdXJllEsCjA1hc3NldF9kZW5zaXR5lEsCjBFpbnNw
+ZWN0aW9uX3NlYXNvbpRLAYwRaW5zcGVjdGlvbl93aW5kb3eUSwGMD21vaXN0dXJlX3N0cmVzc5RL
+AmgXSwF1jAVtZXRhc5R9lHViaBEpgZR9lChoFH2UKGgWaBdLZYaUaBlLAEr+////hpRoG4+USv7/
+//+GlGgeaB9LZoaUaAxLAnVoIX2UKGgfSwJoI0sCaCRLAmglSwJoJksCaCdLAmgoSwJoKUsBaCpL
+AWgrSwJoF0sBdWgsfZSMB091dGxpZXKUSwFzdWJldS4=
+</properties>
 	</node_properties>
 	<session_state>
 		<window_groups />
